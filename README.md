@@ -1,4 +1,5 @@
 BLE Chat
+=== ====
 
 This Android App works with a HM-10 BLE module.  It can be used for communication between an Android device and a microcontroller.
 
@@ -23,48 +24,38 @@ That code was based on the Google BLE example called BluetoothLeGatt available h
 
 Below is an Arduino sketch that will echo characters from the serial port that can be used to test BLE Chat.
 
+Arduino sketch
+------- ------
 
-
-/*
-    BLE_echo
+    /*
+        BLE_echo
+        
+        Test a serial connection to a HM-10
+        BLE module by reading incoming data
+        and writing it back out the serial
+        port.
+    */
     
-    Test a serial connection to a HM-10
-    BLE module by reading incoming data
-    and writing it back out the serial
-    port.
+    const int BUFF_LEN = 21;      // serial buffer length
+    char sBuff[BUFF_LEN];         // serial buffer
     
-*/
-
-const int BUFF_LEN = 21;      // serial buffer length
-
-char sBuff[BUFF_LEN];         // serial buffer
-
-void setup()
-{
-  Serial.begin(9600);      // open serial port
-  
-  Serial.setTimeout(20);  // timeout defaults to 1000 ms
-
-}
-
-void loop()
-{
-
-  // while bytes available ;
-  if( Serial.available() )
-  {
-    // read into buffer
-    int bytesRead = Serial.readBytes(sBuff, BUFF_LEN);
+    void setup()
+    {
+      Serial.begin(9600);      // open serial port
+      Serial.setTimeout(20);  // timeout defaults to 1000 ms
+    }
     
-    // echo read bytes to serial port
-    for(int i=0; i < bytesRead; i++) Serial.write(sBuff[i]);
-
-    
-  } // if
-
-
-}
-
-
+    void loop()
+    {
+      // while bytes available ;
+      if( Serial.available() )
+      {
+        // read into buffer
+        int bytesRead = Serial.readBytes(sBuff, BUFF_LEN);
+        
+        // echo read bytes to serial port
+        for(int i=0; i < bytesRead; i++) Serial.write(sBuff[i]);
+      } // if
+    }
 
 
