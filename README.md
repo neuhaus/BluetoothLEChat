@@ -1,5 +1,4 @@
-BLE Chat
-=== ====
+# BLE Chat
 
 This Android App works with a HM-10 BLE module.  It can be used for communication between an Android device and a microcontroller.
 
@@ -24,8 +23,7 @@ That code was based on the Google BLE example called BluetoothLeGatt available h
 
 Below is an Arduino sketch that will echo characters from the serial port that can be used to test BLE Chat.
 
-Arduino sketch
-------- ------
+## Arduino sketch
 
     /*
         BLE_echo
