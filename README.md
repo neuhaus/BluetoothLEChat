@@ -8,7 +8,8 @@ See the HM-10 datasheet for the correct pinout.  The tested module had:
 
 * PIN 1 =>  ARDUINO 0 (RX), 
 * PIN 2 => ARDUINO 1 (TX), 
-* PIN 12 => 3.3V, PIN 13 => GND 
+* PIN 12 => 3.3V, 
+* PIN 13 => GND,
 * PIN 23 => LED +.  
 
 There was also a 0.1uF capacitor between VCC and ground and a 470 OHM resistor between PIN 23 and the LED. 
